@@ -1,6 +1,10 @@
 # Ev.1_Proyecto-final
 Proyecto final para la UF: TC1031, Programación de estructuras de datos y algoritmos fundamentales.
 
+### Instrucciones para compilar
+g++ main.cpp -o intento
+./intento  
+
 ## Avance 1
 
 Este proyecto es un *"Recomendador de mazos" para el videojuego Marvel Snap.*
