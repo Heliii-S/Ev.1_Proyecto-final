@@ -3,6 +3,7 @@ Proyecto final para la UF: TC1031, Programación de estructuras de datos y algor
 
 ### Instrucciones para compilar
 g++ main.cpp -o intento
+
 ./intento  
 
 ## Avance 1
