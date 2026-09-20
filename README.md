@@ -25,13 +25,15 @@ Ordenar una serie de cartas (se proporcionarán los datos de mi colección actua
 ### Los criterios de sub-competencias a evaluar en este avance son:
 -> SICT0301: Evalúa los componentes
   * Análisis de complejidad para los algoritmos de ordenamiento:
-    El algoritmo de ordenamiento que se usa es Merge, y en el mejor, peor y caso     promedio tiene una complejidad de O(n log n) y en espacio de: O(n).
+    El algoritmo de ordenamiento que se usa es Merge, y en el mejor, peor y caso promedio tiene una complejidad de O(n log n) y en espacio de: O(n).
     
   * Análisis de complejidad para las estructuras de datos:
     La estructura de datos que uso es <vector>, tiene un acceso O(1) a vector[i].
     
   * Análisis de los demás componentes del programa:
-    Uso la clase "tarjeta" para definir objetos de tarjetas      con distintos atributos y quizá en un futuro agregar         más; también uso una clase donde incluyo el algoritmo de     ordenamiento merge y tomo en cuenta el atributo de la        tarjeta con base en el cuál quiero ordenar, para así no      escribir tres veces el mismo algoritmo de búsqueda.
+    Uso la clase "tarjeta" para definir objetos de tarjetas con distintos atributos y quizá en un futuro agregar         más; también uso una clase donde incluyo el algoritmo de ordenamiento merge, incluyendo una función para ordenar de acuerdo a cada criterio.
+
+    *NOTA IMPORTANTE:* en próximas implementaciones se considerará agregar más participación por parte del usuario, por ejemplo que pueda elegir de acuerdo a que atributo desea ordenar sus cartas, por el momento se muestran los resultados de ordenar con base en cada uno de los atributos. 
     
   * Complejidad final del programa: O(n log n)
 
