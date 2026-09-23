@@ -2,13 +2,14 @@
 Proyecto final para la UF: TC1031, Programación de estructuras de datos y algoritmos fundamentales.
 
 ### Instrucciones para compilar
-g++ main.cpp -o intento
+> g++ main.cpp -o intento
+>
+> ./intento  
 
-./intento  
-
-## Avance 1
-
+### Instrucciones de uso
 Este proyecto es un *"Recomendador de mazos" para el videojuego Marvel Snap.*
+
+> El primer paso para usarlo es elegir el atributo con base al cuál ordenarás las cartas que ya se    > encuentran registradas en el programa, eliges la opción que desees del menú.
 
 #### *Resumen del juego:* 
 Marvel Snap es un videojuego de cartas coleccionables digital, cada juego dura aproximadamente 3 minutos y consta de solo 6 turnos, el objetivo es conseguir la mayor puntuación de poder en al menos 2 de las 3 localizaciones del tablero, los mazos son de solo 12 cartas únicas (sin duplicados), cada partida cuenta con tres ubicaciones aleatorias que tienen efectos únicos (por ejemplo doblar el poder o que no se puedan jugar cartas de costo 1), estos efectos en las localizaciones hacen que se cambie por completo la estrategia en cada juego. 
