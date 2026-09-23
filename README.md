@@ -7,9 +7,10 @@ Proyecto final para la UF: TC1031, Programación de estructuras de datos y algor
 > ./intento  
 
 ### Instrucciones de uso
-Este proyecto es un *"Recomendador de mazos" para el videojuego Marvel Snap.*
+Este proyecto es un *"Recomendador de mazos" para el videojuego Marvel Snap.* usa como guía la siguiente página web [Marvel Snap Card Database](https://marvelsnapzone.com/cards/) 
 
-> El primer paso para usarlo es elegir el atributo con base al cuál ordenarás las cartas que ya se encuentran registradas en el programa, eliges la opción que desees del menú.
+> En este primer avance solo se puede ordenar una colección pre-cargada en el programa con base en el atributo que decida el usuario (costo, poder, tasa de victoria).
+> En avances posteriores por medio del menú se podrán realizar otras acciones como sugerir un mazo de acuerdo con una carta o de acuerdo con la colección general que tienes, que combinación sería mejor.
 
 #### *Resumen del juego:* 
 Marvel Snap es un videojuego de cartas coleccionables digital, cada juego dura aproximadamente 3 minutos y consta de solo 6 turnos, el objetivo es conseguir la mayor puntuación de poder en al menos 2 de las 3 localizaciones del tablero, los mazos son de solo 12 cartas únicas (sin duplicados), cada partida cuenta con tres ubicaciones aleatorias que tienen efectos únicos (por ejemplo doblar el poder o que no se puedan jugar cartas de costo 1), estos efectos en las localizaciones hacen que se cambie por completo la estrategia en cada juego. 
