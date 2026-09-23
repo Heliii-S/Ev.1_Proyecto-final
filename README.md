@@ -36,17 +36,15 @@ Ordenar una serie de cartas (se proporcionarán los datos de mi colección actua
     La estructura de datos que uso es <vector>, tiene un acceso O(1) a vector[i].
     
   * Análisis de los demás componentes del programa:
-    Uso la clase "tarjeta" para definir objetos de tarjetas con distintos atributos y quizá en un futuro agregar         más; también uso una clase donde incluyo el algoritmo de ordenamiento merge, incluyendo una función para ordenar de acuerdo a cada criterio.
+    Uso la clase "tarjeta" para definir objetos de tarjetas con distintos atributos y quizá en un futuro agregar más; también uso una clase donde incluyo el algoritmo de ordenamiento merge, incluyendo una función para ordenar de acuerdo a cada criterio.
 
-    *NOTA IMPORTANTE:* en próximas implementaciones se considerará agregar más participación por parte del usuario, por ejemplo que pueda elegir de acuerdo a que atributo desea ordenar sus cartas, por el momento se muestran los resultados de ordenar con base en cada uno de los atributos. 
-    
   * Complejidad final del programa: O(n log n)
 
 -> SICT0302: Toma decisiones
   * ¿Por qué seleccioné este algoritmo de ordenamiento?
 
-    Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la            colección crezca, el comportamiento general del programa sea predecible.
+    Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
     
   * ¿Por qué seleccioné estas estructuras de datos?
 
-    Elegí un vector de objetos de tipo Carta porque me permite almacenar los atributos de las cartas y proporciona acceso directo a sus elementos mediante índices con una complejidad O(1). Además, me permite incorporar         nuevas cartas a la colección conforme esta aumente.
+    Elegí un vector de objetos de tipo Carta porque me permite almacenar los atributos de las cartas y proporciona acceso directo a sus elementos mediante índices con una complejidad O(1). Además, me permite incorporar nuevas cartas a la colección conforme esta aumente.
