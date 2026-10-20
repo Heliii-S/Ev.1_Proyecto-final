@@ -34,22 +34,22 @@ int main(){
 	coleccion.push_back(Carta("Silk",2,5,54.9));
 	coleccion.push_back(Carta("Friendly Neighborhood Carnage",3,4,50.0));
 	//
-	int r = 0, d;
+	int r = 1, d;
 	Merge merge;
 	    do{	
-		std::cout<<"\n1) Mostrar colección actual";
-        std::cout<<"\n2) Ordenar por poder";
-        std::cout<<"\n3) Ordenar por costo";
-        std::cout<<"\n4) Ordenar por tasa de victoria";
+		std::cout<<"\n3) Mostrar colección actual";
+        std::cout<<"\n4) Ordenar por poder";
+        std::cout<<"\n5) Ordenar por costo";
+        std::cout<<"\n6) Ordenar por tasa de victoria";
         std::cout<<"\nELIGE LA OPCIÓN QUE DESEES REALIZAR: ";
         std::cin>>d;
-        if (d == 1){
+        if (d == 3){
 			std::cout << "COLECCION A ORDENAR" << std::endl;
 			for (int i = 0; i < coleccion.size(); i++){
 				std::cout << coleccion[i].getNombre() << std::endl;
 			}
         }
-        else if (d == 2){
+        else if (d == 4){
 			merge.mergeDividirPoder(coleccion, 0, coleccion.size() - 1);
 			std::cout << "ORDENADO POR PODER" << std::endl;
 			for (int i = 0; i < coleccion.size(); i++)
@@ -57,7 +57,7 @@ int main(){
 				std::cout << coleccion[i].getNombre() << " - Poder: " << coleccion[i].getPoder() << std::endl;
 			}
         }
-        else if (d == 3){
+        else if (d == 5){
 			merge.mergeDividirCosto(coleccion, 0, coleccion.size() - 1);
 			std::cout << "ORDENADO POR COSTO" << std::endl;
 			for (int i = 0; i < coleccion.size(); i++)
@@ -65,7 +65,7 @@ int main(){
 				std::cout << coleccion[i].getNombre() << " - Costo: " << coleccion[i].getCosto() << std::endl;
 			}
         }
-		else if (d == 4){
+		else if (d == 6){
 			merge.mergeDividirVictoria(coleccion, 0, coleccion.size() - 1);
 			std::cout << "ORDENADO POR TASA DE VICTORIA" << std::endl;
 			for (int i = 0; i < coleccion.size(); i++)
@@ -77,7 +77,7 @@ int main(){
             std::cout<<"\nERROR: Opción incorrecta.";
 			break;
         }
-        std::cout<<"\n¿Quieres realizar otra acción? (0:Sí, 1:No) ";
+        std::cout<<"\n¿Quieres realizar otra acción? (1:Sí, 2:No) ";
         std::cin >> r;
-    } while(r == 0);
+    } while(r == 1);
 }
