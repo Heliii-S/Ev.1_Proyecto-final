@@ -9,71 +9,120 @@
 #include <vector>
 #include "carta.h"
 #include "merge.h"
+#include "queue.h"
+#include "carga.h"
 
 int main(){
-	std::vector<Carta> coleccion;
-	//colección actual de cartas
-	coleccion.push_back(Carta("Absorbing Man", 4,5,59.2));
-	coleccion.push_back(Carta("Chameleon",3,3,50));
-	coleccion.push_back(Carta("Gambit",3,3,43.2));
-	coleccion.push_back(Carta("Cyclops",3,5,66.9));
-	coleccion.push_back(Carta("Nightcrawler",1,3,42.9));
-	coleccion.push_back(Carta("Jeff the Baby Dolphin?!",2,2,50.8));
-	coleccion.push_back(Carta("Hulk", 6, 12, 65.0));
-    coleccion.push_back(Carta("Iron Man", 5, 0, 70.0));
-    coleccion.push_back(Carta("Ant-Man", 1, 1, 68.0));
-    coleccion.push_back(Carta("Sunspot", 1, 5, 71.0));
-	coleccion.push_back(Carta("Quicksilver",1,2,67.1));
-	coleccion.push_back(Carta("Rogue",3,3,65.1));
-	coleccion.push_back(Carta("Spider-Man Brand New Day",1,2,50.6));
-	coleccion.push_back(Carta("Kitty Pryde",1,1,48.6));
-	coleccion.push_back(Carta("Black Cat",1,4,75));
-	coleccion.push_back(Carta("Spider-Punk",3,3,38.5));
-	coleccion.push_back(Carta("Multiple Man",2,4,55.6));
-	coleccion.push_back(Carta("Cosmo",3,3,58.6));
-	coleccion.push_back(Carta("Silk",2,5,54.9));
-	coleccion.push_back(Carta("Friendly Neighborhood Carnage",3,4,50.0));
-	//
+	std::vector<Carta> coleccion_cartas;
 	int r = 1, d;
 	Merge merge;
-	    do{	
-		std::cout<<"\n3) Mostrar colección actual";
-        std::cout<<"\n4) Ordenar por poder";
-        std::cout<<"\n5) Ordenar por costo";
-        std::cout<<"\n6) Ordenar por tasa de victoria";
+	Carga coleccion_que_cargas;
+	bool coleccionCargada = false;
+	std::string nombreArchivo;
+	    do{
+		std::cout<<"\n3) Cargar una colección";	
+		std::cout<<"\n4) Mostrar colección actual";
+        std::cout<<"\n5) Ordenar por poder";
+        std::cout<<"\n6) Ordenar por costo";
+        std::cout<<"\n7) Ordenar por tasa de victoria";
+		std::cout<<"\n8) Crear un mazo con altas tasas de victoria";
         std::cout<<"\nELIGE LA OPCIÓN QUE DESEES REALIZAR: ";
         std::cin>>d;
-        if (d == 3){
-			std::cout << "COLECCION A ORDENAR" << std::endl;
-			for (int i = 0; i < coleccion.size(); i++){
-				std::cout << coleccion[i].getNombre() << std::endl;
-			}
-        }
-        else if (d == 4){
-			merge.mergeDividirPoder(coleccion, 0, coleccion.size() - 1);
-			std::cout << "ORDENADO POR PODER" << std::endl;
-			for (int i = 0; i < coleccion.size(); i++)
+        if (d == 3)
+		{
+			std::cout << "Nombre del archivo (nombre.txt): ";
+			std::cin >> nombreArchivo;
+			if (coleccion_que_cargas.cargar(nombreArchivo, coleccion_cartas))
 			{
-				std::cout << coleccion[i].getNombre() << " - Poder: " << coleccion[i].getPoder() << std::endl;
+				if (coleccion_cartas.empty()==false)
+				{
+					coleccionCargada = true;
+					std::cout << "Coleccion cargada correctamente." << std::endl;
+        		}
+        		else
+        		{
+					coleccionCargada = false;
+            		std::cout << "La coleccion esta vacia." << std::endl;
+        		}
+			}
+			else
+			{
+        		coleccionCargada = false;
+        		std::cout << "No se pudo abrir el archivo." << std::endl;
+			}
+		}
+		else if(d == 4){
+			if (coleccionCargada == false){
+				std::cout << "Primero debes cargar una coleccion."<< std::endl;
+			}
+			else{
+				std::cout << "\nCOLECCION A ORDENAR: " << std::endl;
+				for (int i = 0; i < coleccion_cartas.size(); i++){
+					std::cout << coleccion_cartas[i].getNombre() << std::endl;
+				}
 			}
         }
         else if (d == 5){
-			merge.mergeDividirCosto(coleccion, 0, coleccion.size() - 1);
-			std::cout << "ORDENADO POR COSTO" << std::endl;
-			for (int i = 0; i < coleccion.size(); i++)
-			{
-				std::cout << coleccion[i].getNombre() << " - Costo: " << coleccion[i].getCosto() << std::endl;
+			if (coleccionCargada == false){
+				std::cout << "Primero debes cargar una coleccion."<< std::endl;
+			}
+			else{
+				merge.mergeDividir(coleccion_cartas, 0, coleccion_cartas.size() - 1, 1);
+				std::cout << "\nCOLECCIÓN ORDENADA POR PODER: " << std::endl;
+				for (int i = 0; i < coleccion_cartas.size(); i++)
+				{
+					std::cout << coleccion_cartas[i].getNombre() << " - Poder: " << coleccion_cartas[i].getPoder() << std::endl;
+				}
 			}
         }
-		else if (d == 6){
-			merge.mergeDividirVictoria(coleccion, 0, coleccion.size() - 1);
-			std::cout << "ORDENADO POR TASA DE VICTORIA" << std::endl;
-			for (int i = 0; i < coleccion.size(); i++)
-			{
-				std::cout << coleccion[i].getNombre() << " - Tasa de victoria: " << coleccion[i].getTasaVictoria() << std::endl;
+        else if (d == 6){
+			if (coleccionCargada == false){
+				std::cout << "Primero debes cargar una coleccion."<< std::endl;
+			}
+			else{
+				merge.mergeDividir(coleccion_cartas, 0, coleccion_cartas.size() - 1, 2);
+				std::cout << "\nCOLECCIÓN ORDENADA POR COSTO: " << std::endl;
+				for (int i = 0; i < coleccion_cartas.size(); i++)
+				{
+					std::cout << coleccion_cartas[i].getNombre() << " - Costo: " << coleccion_cartas[i].getCosto() << std::endl;
+				}
+			}
+        }
+		else if (d == 7){
+			if (coleccionCargada == false){
+				std::cout << "Primero debes cargar una coleccion."<< std::endl;
+			}
+			else{
+				merge.mergeDividir(coleccion_cartas, 0, coleccion_cartas.size() - 1, 3);
+				std::cout << "\nCOLECCIÓN ORDENADA POR TASA DE VICTORIA: " << std::endl;
+				for (int i = 0; i < coleccion_cartas.size(); i++)
+				{
+					std::cout << coleccion_cartas[i].getNombre() << " - Tasa de victoria: " << coleccion_cartas[i].getTasaVictoria() << std::endl;
+				}
 			}
 		}
-        else{
+        else if (d == 8){
+			if (coleccionCargada == false){
+				std::cout << "Primero debes cargar una coleccion."<< std::endl;
+			}
+			else
+			{
+				merge.mergeDividir(coleccion_cartas, 0, coleccion_cartas.size() - 1, 3);
+				Queue mazo(12);
+				for (int i = 0; i < 12; i++)
+				{
+					mazo.enqueue(coleccion_cartas[i]);
+				}
+				std::cout << "\nMAZO SUGERIDO SEGÚN LA COLECCIÓN ACTUAL: " << std::endl;
+				while (mazo.empty()==false)
+				{
+					Carta actual = mazo.front();
+					std::cout << actual.getNombre() << " - Tasa de victoria: " << actual.getTasaVictoria() << std::endl;
+					mazo.dequeue();
+				}
+			}
+		}
+		else{
             std::cout<<"\nERROR: Opción incorrecta.";
 			break;
         }
