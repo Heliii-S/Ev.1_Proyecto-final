@@ -51,7 +51,10 @@ void Queue::enqueue(Carta carta)
     if (full()==false)
     {
         data[tail] = carta;
-        tail = (tail + 1) % capacidad;
+        tail++;
+        if(tail == capacidad){
+            tail = 0;
+        }
         counter++;
     }
     else
@@ -75,7 +78,10 @@ void Queue::dequeue()
 {
     if (empty()==false)
     {
-        head = (head + 1) % capacidad;
+        head++;
+        if (head == capacidad){
+            head = 0;
+        }
         counter--;
     }
 }
