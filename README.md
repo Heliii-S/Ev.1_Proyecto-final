@@ -53,14 +53,21 @@ Para cargar datos en el programa, ya se incluyen ejemplos de 4 archivos diferent
 1. Elegir la opción "3"
 2. Escribir alguno de estos nombres cuando pide el "Nombre del archivo:"
 > coleccion1.txt
+
 > coleccion2.txt
+
 > coleccion3.txt
+
 > coleccion4.txt
 
 Si el usuario desea ingresar su propia colección de cartas, lo que tiene que hacer es crear un archivo de texto (.txt)
+
 Y en cada línea del archivo escribir:
+
 > Nombre, costo, poder, tasa de victoria
+
 Por ejemplo:
+
 > Gambit,3,3,43.2
 
 Datos importantes a considerar: 
