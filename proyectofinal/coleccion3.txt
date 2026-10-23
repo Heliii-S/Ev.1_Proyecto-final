@@ -1,0 +1,15 @@
+Spider-Man Noir, 4, 5, 73.12
+Spider-Punk, 3, 3, 46.34
+Spider-Woman, 5, 8, 89.2
+Star-Lord, 2, 2, 52.45
+Stardust, 4, 6, 32.94
+The Hood, 1, -3, 67.8
+Vampire Enchantress, 6, 7, 27.34
+White Queen, 3, 5. 38.56
+Zombie Nova, 2, 0, 92.3
+Zombie Horde, 0,0, 61,34
+Zombie Venom, 3, 3, 72.45
+Silk, 2, 5, 57.43
+Raptor, 1,1,86.23
+Omega Red, 4, 6, 99.1
+Odin, 6, 10, 77.8
