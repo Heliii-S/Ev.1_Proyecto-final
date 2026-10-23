@@ -15,6 +15,7 @@ class Carta {
         int poder;
         double tasaVictoria;
     public:
+        Carta(){};
         Carta(std::string n, int c, int p, double t):nombre(n),costo(c),poder(p),tasaVictoria(t){};
         std::string getNombre();
         int getCosto();
