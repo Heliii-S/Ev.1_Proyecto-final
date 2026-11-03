@@ -1,0 +1,16 @@
+Abomination, 5, 9, 65.7
+Adam Warlock, 2, 0, 63.5
+Agatha Harkness, 6, 12, 50
+Black Cat, 1, 4, 63.3
+Broodling, 3, 2, 32.4
+Cerebro, 3, 0, 64.7
+Dormammu, 7, 13, 71.4
+Fantomex, 4, 7, 38.9
+Gamora, 5, 8, 0
+Ghost, 3, 5, 100
+Human Torch, 3, 2, 33.3
+Kid Omega, 2, 1,50.9
+Magneto, 6, 12, 44.4
+Mojo, 2, 2, 0
+Polaris, 3, 5, 53.2
+Sandman, 5, 8, 45.2
