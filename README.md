@@ -92,14 +92,26 @@ El algoritmo de ordenamiento que se usa es Merge, y en el mejor, peor y caso pro
 
 #### Hace un análisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa.
 
-Una fila o queue tiene una complejidad espacial de: O(n) y una complejidad temporal de: O(1) en el caso de este programa, ya que solo uso los métodos de queue, enqueue y otros que tienen esta complejidad.
+En este programa uso 3 estructuras de datos: una queue o fila, listas enlazadas y vectores.
+
+Las operaciones que realizo con la fila son: enqueue, dequeue, front, empty, full, con complejidad temporal O(1) en el mejor caso, peor caso y caso promedio). Además uso clear, con complejidad temporal O(1) en el mejor de los casos, y O(n) en el peor de los casos y el caso promedio, tiene este valor en el caso promedio en lugar de un O(1) porque al usar una queue con listas enlazadas, cada vez que se libera la memoria se debe liberar la memoria de cada nodo uno por uno.
+
+En cuanto a la complejidad espacial, la queue tiene una complejidad total de O(n) y de O(1) por operación. 
+
+Con respecto a la lista enlazada, su complejidad espacial y temporal es de O(1) por cada nodo en el mejor, peor y caso promedio. 
+
+Por último, con el vector, el acceso a cartas[i] y size() tiene una complejidad temporal de O(1) en el mejor caso, el caso promedio y el peor caso. Pero en general el vector tiene una complejidad temporal de O(n) combinando el mejor caso, promedio y el caso peor de acciones como: insertar en medio, eliminar en medio, recorrer elementos, etc. 
+
+En cuanto a la complejidad espacial, el vector tiene una complejidad espacial de O(n): porque el vector almacena n elementos y necesita memoria proporcional a la cantidad de elementos.
 
 ### SICT0302: Toma decisiones
 #### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
 Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
 
 #### Selecciona una estructura de datos adecuada al problema y la usa correctamente.
-Uso la estructura de datos <queue> o fila porque me ayuda a que las primeras cartas que ingreso a la fila (que son las mayores) sean también las primeras en salir, y eso es justo lo que quiero, mostrar las 12 cartas que tienen las tasas de victoria más altas. 
+Uso la estructura de datos <queue> o fila porque me ayuda a que las primeras cartas que ingreso a la fila (que son las mayores) sean también las primeras en salir, y eso es justo lo que quiero, mostrar las 12 cartas que tienen las tasas de victoria más altas. Uso esta opción en lugar de una pila o stack porque esta estructura de datos me daría un valor contrario a lo que deseo obtener. 
+
+En cuanto a las listas enlazadas, las uso en lugar de usar vectores, para así poder añadir o eliminar "cartas" de una forma más rápida y eficiente, además de que permite manejar un tamaño mucho más dinámico y flexible para el "mazo" que con un vector. Además, una lista enlazada me permite usar únicamente la memoria justa para los nodos existentes, sin tener que reservar espacio por adelantado.
 
 ### SICT0303: Implementa acciones científicas
 #### Implementa mecanismos correctos para consultar información de las estructuras.
