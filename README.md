@@ -93,13 +93,14 @@ El programa muestra en la terminal lo que el usuario haya decidido que muestre.
 5. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
 6. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
 
-## Desarrollo de competencias
+# Desarrollo de competencias
 
-### SICT0301: Evalúa los componentes
-#### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
+## SICT0301: Evalúa los componentes
+### Hace un análisis de complejidad correcto y completo para los algoritmos de ordenamiento usados en el programa.
+
 El algoritmo de ordenamiento que se usa es Merge, y en el mejor, peor y caso promedio tiene una complejidad de O(n log n) y en espacio de: O(n).
 
-#### Hace un análisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa.
+### Hace un análisis de complejidad correcto y completo de todas las estructuras de datos y cada uno de sus usos en el programa.
 
 En este programa uso 3 estructuras de datos: una queue o fila, listas enlazadas y vectores.
 
@@ -113,24 +114,30 @@ Por último, con el vector, el acceso a cartas[i] y size() tiene una complejidad
 
 En cuanto a la complejidad espacial, el vector tiene una complejidad espacial de O(n): porque el vector almacena n elementos y necesita memoria proporcional a la cantidad de elementos.
 
-#### Hace un análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa.
+### Hace un análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa.
+
 Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
 
-### SICT0302: Toma decisiones
-#### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
+## SICT0302: Toma decisiones
+### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
+
 Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
 
-#### Selecciona una estructura de datos adecuada al problema y la usa correctamente.
+### Selecciona una estructura de datos adecuada al problema y la usa correctamente.
+
 Uso la estructura de datos <queue> o fila porque me ayuda a que las primeras cartas que ingreso a la fila (que son las mayores) sean también las primeras en salir, y eso es justo lo que quiero, mostrar las 12 cartas que tienen las tasas de victoria más altas. Uso esta opción en lugar de una pila o stack porque esta estructura de datos me daría un valor contrario a lo que deseo obtener. 
 
 En cuanto a las listas enlazadas, las uso en lugar de usar vectores, para así poder añadir o eliminar "cartas" de una forma más rápida y eficiente, además de que permite manejar un tamaño mucho más dinámico y flexible para el "mazo" que con un vector. Además, una lista enlazada me permite usar únicamente la memoria justa para los nodos existentes, sin tener que reservar espacio por adelantado.
 
-### SICT0303: Implementa acciones científicas
-#### Implementa mecanismos correctos para consultar información de las estructuras.
+## SICT0303: Implementa acciones científicas
+### Implementa mecanismos correctos para consultar información de las estructuras.
+
 Considero que si consulto de forma correcta la información que incluyo en las estructuras, ya que ingreso a cada posición y extraigo los valores necesarios para que el programa sea útil para el usuario.
 
-#### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.
+### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.
+
 Considero que si implemento mecanismos para leer los archivos, ya que creé otra clase, llamada "Carga" donde tengo un método que me permite leer los datos de distintos archivos de texto siempre y cuando estos sigan el formato antes especificado.
 
 ### Implementa mecanismos de escritura de archivos para guardar los datos  de las estructuras de manera correcta
+
 Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
