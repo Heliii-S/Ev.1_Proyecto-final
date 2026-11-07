@@ -34,6 +34,15 @@ En este segundo avance se corrigieron las observaciones del avance 1, también s
 3. Opción de cargar una colección: para poder aplicar la competencia de lectura de archivos y poder cambiar los datos que el programa va a analizar.
 4. Opción de crear un mazo con altas tasas de victoria: para poder cumplir el propósito del programa, y aplicar la competencia de usar otras estructuras de datos.
 
+## Descripción del avance 3
+Escribe aquí la descripción de lo que contiene este avance. 
+
+### Cambios sobre el segundo avance
+1. Escribe la lista de cambios realizados sobre el planteamiento pasado: Argumenta la razón por la que decidiste el cambio. Estos argumentos puedes retomarlos más adelante en tu argumentación de competencias.
+2. Cambio 2: Razón del cambio
+3. Cambio 3: Razón del cambio
+4. etc...: etc...
+
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
 
@@ -104,6 +113,9 @@ Por último, con el vector, el acceso a cartas[i] y size() tiene una complejidad
 
 En cuanto a la complejidad espacial, el vector tiene una complejidad espacial de O(n): porque el vector almacena n elementos y necesita memoria proporcional a la cantidad de elementos.
 
+#### Hace un análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa.
+Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+
 ### SICT0302: Toma decisiones
 #### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
 Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
@@ -119,3 +131,6 @@ Considero que si consulto de forma correcta la información que incluyo en las e
 
 #### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.
 Considero que si implemento mecanismos para leer los archivos, ya que creé otra clase, llamada "Carga" donde tengo un método que me permite leer los datos de distintos archivos de texto siempre y cuando estos sigan el formato antes especificado.
+
+### Implementa mecanismos de escritura de archivos para guardar los datos  de las estructuras de manera correcta
+Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
