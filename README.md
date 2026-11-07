@@ -85,7 +85,7 @@ Datos importantes a considerar:
 
 ## Descripción de las salidas del avance de proyecto
 El programa muestra en la terminal lo que el usuario haya decidido que muestre.
-1.Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
+1. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
 2. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
 3. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
 4. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
