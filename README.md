@@ -38,10 +38,9 @@ En este segundo avance se corrigieron las observaciones del avance 1, también s
 Escribe aquí la descripción de lo que contiene este avance. 
 
 ### Cambios sobre el segundo avance
-1. Escribe la lista de cambios realizados sobre el planteamiento pasado: Argumenta la razón por la que decidiste el cambio. Estos argumentos puedes retomarlos más adelante en tu argumentación de competencias.
-2. Cambio 2: Razón del cambio
-3. Cambio 3: Razón del cambio
-4. etc...: etc...
+1. Se cambió la forma de implementar la queue o fila, ya no se encuentra implementada solamente sobre un vector, sino que al momento de crear una sugerencia de mazo, se usa una lista ligada para guardar ahí las cartas seleccionadas, así se pueden realizar acciones de forma más eficiente sobre todo para la opción de simulación que se añadió en este avance.
+2. Se agregó una nueva opción que es la opción de simular la entrega de cartas, como en el juego se te da el mazo de forma aleatoria, este pequeño simulador coloca el mazo elegido de forma aleatoria y empieza a mostrar al usuario las cuatro cartas que se le dan al inicio (de forma aleatoria) y luego conforme las use o no dará otras, así hasta mostrar las 12 cartas del mazo o hasta que se acaben los turnos, lo que pase primero dentro de la simulación según las decisiones del jugador.
+3. Se agregó una nueva función para guardar el resultado del análisis de cada colección, el reporte incluye los datos que se obtendrían si seleccionaras cada opción del menú (excepto la simulación) y se genera un archivo de texto aparte.
 
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
@@ -132,7 +131,7 @@ En cuanto a las listas enlazadas, las uso en lugar de usar vectores, para así p
 ## SICT0303: Implementa acciones científicas
 ### Implementa mecanismos correctos para consultar información de las estructuras.
 
-Considero que si consulto de forma correcta la información que incluyo en las estructuras, ya que ingreso a cada posición y extraigo los valores necesarios para que el programa sea útil para el usuario.
+Considero que si consulto de forma correcta la información que incluyo en las estructuras, ya que en cada clase tengo declarados getters que me permiten obtener los valores que las estructuras están guardando. Por ejemplo: en la clase nodo tengo un getter para obtener el dato que guarda y el dato del nodo siguiente. En la clase queue uso los métodos de front o empty para conocer el valor al principio de la fila o si la fila se encuentra vacía. En la clase carta tengo getters para conocer le valor de cad uno de los atributos de una carta (nombre, costo, poder y tasa de victoria)
 
 ### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.
 
