@@ -85,14 +85,23 @@ Datos importantes a considerar:
 
 ## Descripción de las salidas del avance de proyecto
 El programa muestra en la terminal lo que el usuario haya decidido que muestre.
-3. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
-4. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
-5. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
-6. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
-7. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
-8. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
-9. Si se elige la opción de simular una partida con el mazo recomendado, se empezarán a mostrar las cartas entregadas en cada turno, y al usuario se le permitirá "jugar" alguna de esas cartas, pasar de turno (0) o salir de la simulación (8).
 
+3. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
+   
+4. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
+   
+5. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
+   
+6. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
+   
+7. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
+   
+8. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
+   
+9. Si se elige la opción de simular una partida con el mazo recomendado, se empezarán a mostrar las cartas entregadas en cada turno, y al usuario se le permitirá "jugar" alguna de esas cartas, pasar de turno (0) o salir de la simulación (8).
+    
+10. Si se elige la opción de generar un archivo con el análisis realizado, se genera un archivo de texto aparte con el nombre de: "resultados.txt". Este archivo incluye los datos obtenidos luego de realizar: un ordenamiento por poder, por costo, por tasa de victoria, y un mazo que se recomienda. Todo esto lo puede hacer siempre y cuando se le haya brindado una colección válida al programa.
+    
 # Desarrollo de competencias
 
 ## SICT0301: Evalúa los componentes
