@@ -38,9 +38,9 @@ En este segundo avance se corrigieron las observaciones del avance 1, también s
 Escribe aquí la descripción de lo que contiene este avance. 
 
 ### Cambios sobre el segundo avance
-1. Se cambió la forma de implementar la queue o fila, ya no se encuentra implementada solamente sobre un vector, sino que al momento de crear una sugerencia de mazo, se usa una lista ligada para guardar ahí las cartas seleccionadas, así se pueden realizar acciones de forma más eficiente sobre todo para la opción de simulación que se añadió en este avance.
-2. Se agregó una nueva opción que es la opción de simular la entrega de cartas, como en el juego se te da el mazo de forma aleatoria, este pequeño simulador coloca el mazo elegido de forma aleatoria y empieza a mostrar al usuario las cuatro cartas que se le dan al inicio (de forma aleatoria) y luego conforme las use o no dará otras, así hasta mostrar las 12 cartas del mazo o hasta que se acaben los turnos, lo que pase primero dentro de la simulación según las decisiones del jugador.
-3. Se agregó una nueva función para guardar el resultado del análisis de cada colección, el reporte incluye los datos que se obtendrían si seleccionaras cada opción del menú (excepto la simulación) y se genera un archivo de texto aparte.
+1. Se cambió la forma de implementar la queue o fila, ya no se encuentra implementada solamente sobre un vector, sino que al momento de crear una sugerencia de mazo y al hacer una simulación simple de una partida, se usa una lista ligada para guardar ahí las cartas seleccionadas, así se pueden realizar acciones de forma más eficiente sobre todo para la opción de simulación que se añadió en este avance.
+2. Se agregó una nueva opción que es la opción de simular la entrega de cartas (solamente como se van entregando al jugador, no se realiza nada más); como en el juego se te van dando las cartas del mazo de forma aleatoria y tal como en el juego, es posible que algunas cartas no salgan nunca en la partida. Este pequeño simulador empieza mostrando al usuario las cuatro cartas que se le dan al inicio (de forma aleatoria). En cada ronda se le permitirá al usuario usar alguna carta o no, y también se le dará la opción de terminar la simulación. Otro aspecto importante de esta simulación es que deja de dar cartas si la mano del jugador se llena (es decir si ya tiene 7 cartas), además, da una carta nueva de forma aleatoria al inicio de cada turno, tal y como en el juego.
+3. Se agregó una nueva función para guardar el resultado del análisis de cada colección, el reporte incluye los datos que se obtendrían si seleccionaras cada opción del menú (excepto la simulación) y se genera un archivo de texto aparte con el nombre de: "resultados.txt".
 
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
@@ -85,12 +85,13 @@ Datos importantes a considerar:
 
 ## Descripción de las salidas del avance de proyecto
 El programa muestra en la terminal lo que el usuario haya decidido que muestre.
-1. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
-2. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
-3. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
-4. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
-5. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
-6. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
+3. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
+4. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
+5. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
+6. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
+7. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
+8. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
+9. Si se elige la opción de simular una partida con el mazo recomendado, se empezarán a mostrar las cartas entregadas en cada turno, y al usuario se le permitirá "jugar" alguna de esas cartas, pasar de turno (0) o salir de la simulación (8).
 
 # Desarrollo de competencias
 
@@ -115,18 +116,34 @@ En cuanto a la complejidad espacial, el vector tiene una complejidad espacial de
 
 ### Hace un análisis de complejidad correcto y completo para todos los demás componentes del programa y determina la complejidad final del programa.
 
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+La complejidad temporal general del programa es O(n log n) y su complejidad espacial es O(n), donde "n" representa el número de cartas almacenadas en la colección.
+
+Esto se debe a que, la mayor parte de las operaciones individuales, como consultar los atributos de una carta, insertar o eliminar elementos de la cola y acceder a posiciones del vector, tienen una complejidad constante O(1). Por otro lado, recorrer, cargar y guardar una colección requiere O(n), ya que es necesario procesar sus elementos.
+
+El algoritmo que tiene mayor influencia en la complejidad final es el “Merge”, utilizado para ordenar las cartas por poder, costo y tasa de victoria. Ya que su complejidad temporal es O(n log n), tanto en el mejor como en el promedio y peor caso. 
+Además, las opciones de creación de mazos, guardado de resultados y simulación de partidas también utilizan este algoritmo, por lo que su complejidad temporal termina siendo,  también: O(n log n). 
 
 ## SICT0302: Toma decisiones
 ### Selecciona un algoritmo de ordenamiento adecuado al problema y lo usa correctamente.
 
-Elegí el algoritmo de ordenamiento de merge, porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
+Elegí el algoritmo de ordenamiento de "Merge", porque mantiene la misma complejidad temporal y creo que esto es útil ya que no sé cuantas cartas llegará a manejar el programa, y este algoritmo permite que aunque la colección crezca, el comportamiento general del programa sea predecible.
 
 ### Selecciona una estructura de datos adecuada al problema y la usa correctamente.
 
-Uso la estructura de datos <queue> o fila porque me ayuda a que las primeras cartas que ingreso a la fila (que son las mayores) sean también las primeras en salir, y eso es justo lo que quiero, mostrar las 12 cartas que tienen las tasas de victoria más altas. Uso esta opción en lugar de una pila o stack porque esta estructura de datos me daría un valor contrario a lo que deseo obtener. 
+En el proyecto se utilizan tres estructuras de datos: filas o <queues>, listas enlazadas para implementar la fila y vectores.
 
-En cuanto a las listas enlazadas, las uso en lugar de usar vectores, para así poder añadir o eliminar "cartas" de una forma más rápida y eficiente, además de que permite manejar un tamaño mucho más dinámico y flexible para el "mazo" que con un vector. Además, una lista enlazada me permite usar únicamente la memoria justa para los nodos existentes, sin tener que reservar espacio por adelantado.
+La fila se utiliza para almacenar y entregar las cartas del mazo recomendado. 
+Su funcionamiento hace que la primera carta que ingresa es también la primera en salir. Esto resulta útil para simular la entrega de cartas al jugador, ya que permite obtenerlas en el mismo orden en el que fueron organizadas después de mezclar el mazo.
+
+> Es importante mencionar que la selección de las 12 cartas con mayor tasa de victoria no depende directamente de la cola, sino del “Merge”, que ordena la colección de mayor a menor tasa de victoria. Ya que cuando ya se encuentran ordenadas las cartas de mayor a menor es cuando las primeras 12 se agregan a la estructura Queue.
+
+Se eligió una fila en lugar de una pila porque en las pilas, el último elemento que ingresa es el primero en salir y ese comportamiento no sería el más adecuado para la entrega de cartas que se busca simular.
+
+Por otra parte, se usa una lista simplemente enlazada para implementar la fila. Esta estructura está formada por nodos que almacenan una “carta” y una referencia al siguiente nodo (o carta). Además, permite agregar elementos al final y eliminarlos al inicio en tiempo constante O(1).
+
+Una ventaja de esta implementación es que la memoria se asigna dinámicamente conforme se agregan nuevos nodos, sin necesidad de reservar una capacidad fija desde el inicio. Además, no es necesario desplazar los demás elementos al insertar o eliminar una carta, a diferencia de algunas operaciones realizadas sobre un vector.
+
+Finalmente, se usan vectores para almacenar la colección completa de cartas, ordenar copias de esta colección y administrar las cartas que tiene el jugador durante la simulación. Se eligió porque permite acceder directamente a cualquier posición mediante un índice.
 
 ## SICT0303: Implementa acciones científicas
 ### Implementa mecanismos correctos para consultar información de las estructuras.
@@ -139,4 +156,4 @@ Considero que si implemento mecanismos para leer los archivos, ya que creé otra
 
 ### Implementa mecanismos de escritura de archivos para guardar los datos  de las estructuras de manera correcta
 
-Escribe aquí tus argumentos sobre por qué consideras que has desarrrollado esta competencia y dónde se puede observar el desarrollo que mencionas.
+Considero que si implemento mecanismos para leer los archivos, ya que dentro de la clase que se creó en el avance anterior (llamada "Carga") agregué un método que permite guardar los datos obtenidos luego de realizar: un ordenamiento por poder, por costo, por tasa de victoria, y un mazo que se recomienda. Todo esto lo puede hacer siempre y cuando se le haya brindado una colección válida al programa.
