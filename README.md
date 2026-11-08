@@ -144,7 +144,7 @@ En el proyecto se utilizan tres estructuras de datos: filas o <queues>, listas e
 La fila se utiliza para almacenar y entregar las cartas del mazo recomendado. 
 Su funcionamiento hace que la primera carta que ingresa es también la primera en salir. Esto resulta útil para simular la entrega de cartas al jugador, ya que permite obtenerlas en el mismo orden en el que fueron organizadas después de mezclar el mazo.
 
-> Es importante mencionar que la selección de las 12 cartas con mayor tasa de victoria no depende directamente de la cola, sino del “Merge”, que ordena la colección de mayor a menor tasa de victoria. Ya que cuando ya se encuentran ordenadas las cartas de mayor a menor es cuando las primeras 12 se agregan a la estructura Queue.
+> Es importante mencionar que la selección de las 12 cartas con mayor tasa de victoria no depende de la fila, sino del “Merge”, que ordena la colección de mayor a menor tasa de victoria. Ya que cuando ya se encuentran ordenadas las cartas de mayor a menor es cuando las primeras 12 se agregan a la estructura Queue.
 
 Se eligió una fila en lugar de una pila porque en las pilas, el último elemento que ingresa es el primero en salir y ese comportamiento no sería el más adecuado para la entrega de cartas que se busca simular.
 
