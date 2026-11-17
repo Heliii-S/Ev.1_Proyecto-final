@@ -105,17 +105,19 @@ int main(){
 	//en la función de simular partida
 	srand(10);
 	do{
-		std::cout<<"\n3) Cargar una colección";	
-		std::cout<<"\n4) Mostrar colección actual";
-        std::cout<<"\n5) Ordenar por poder";
-        std::cout<<"\n6) Ordenar por costo";
-        std::cout<<"\n7) Ordenar por tasa de victoria";
-		std::cout<<"\n8) Crear un mazo con altas tasas de victoria";
-		std::cout<<"\n9) Simular una partida con el mazo recomendado";
-		std::cout<<"\n10) Exportar resultados del análisis";
+		std::cout<<"\n-- MENÚ DEL PROGRAMA --";	
+		std::cout<<"\n0) Salir del programa";	
+		std::cout<<"\n1) Cargar una colección";	
+		std::cout<<"\n2) Mostrar colección actual";
+        std::cout<<"\n3) Ordenar por poder";
+        std::cout<<"\n4) Ordenar por costo";
+        std::cout<<"\n5) Ordenar por tasa de victoria";
+		std::cout<<"\n6) Crear un mazo con altas tasas de victoria";
+		std::cout<<"\n7) Simular una partida con el mazo recomendado";
+		std::cout<<"\n8) Exportar resultados del análisis";
         std::cout<<"\nELIGE LA OPCIÓN QUE DESEES REALIZAR: ";
         std::cin>>d;
-        if (d == 3)
+        if (d == 1)
 		{
 			std::cout << "Nombre del archivo (nombre.txt): ";
 			std::cin >> nombreArchivo;
@@ -125,6 +127,10 @@ int main(){
 				{
 					coleccionCargada = true;
 					std::cout << "Coleccion cargada correctamente." << std::endl;
+					std::cout << "\nESTA ES LA COLECCIÓN CARGADA: " << std::endl;
+					for (int i = 0; i < coleccion_cartas.size(); i++){
+						std::cout << coleccion_cartas[i].getNombre() << std::endl;
+					}
         		}
         		else
         		{
@@ -138,7 +144,7 @@ int main(){
         		std::cout << "No se pudo abrir el archivo." << std::endl;
 			}
 		}
-		else if(d == 4){
+		else if(d == 2){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion."<< std::endl;
 			}
@@ -149,7 +155,7 @@ int main(){
 				}
 			}
         }
-        else if (d == 5){
+        else if (d == 3){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion."<< std::endl;
 			}
@@ -162,7 +168,7 @@ int main(){
 				}
 			}
         }
-        else if (d == 6){
+        else if (d == 4){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion."<< std::endl;
 			}
@@ -175,7 +181,7 @@ int main(){
 				}
 			}
         }
-		else if (d == 7){
+		else if (d == 5){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion."<< std::endl;
 			}
@@ -188,7 +194,7 @@ int main(){
 				}
 			}
 		}
-        else if (d == 8){
+        else if (d == 6){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion."<< std::endl;
 			}
@@ -212,7 +218,7 @@ int main(){
 				}
 			}
 		}
-		else if (d == 9){
+		else if (d == 7){
 			if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion." << std::endl;
 			}
@@ -229,7 +235,7 @@ int main(){
 				simularPartida(mazoElegido);
 			}
 		}
-		else if (d == 10)
+		else if (d == 8)
 		{
     		if (coleccionCargada == false){
 				std::cout << "Primero debes cargar una coleccion." << std::endl;
@@ -249,11 +255,11 @@ int main(){
 			coleccion_que_cargas.guardar("resultados.txt",porPoder,porCosto,porVictoria,mazo);
 			}
 		}
+		else if (d == 0){
+			std::cout << "\nGracias por utilizar el programa.\nAdiós:)";
+		}
 		else{
             std::cout<<"\nERROR: Opción incorrecta.";
-			break;
         }
-        std::cout<<"\n¿Quieres realizar otra acción? (1:Sí, 2:No) ";
-        std::cin >> r;
-    } while(r == 1);
+    } while(d != 0);
 }
