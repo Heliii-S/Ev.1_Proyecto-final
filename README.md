@@ -161,8 +161,10 @@ Considero que si consulto de forma correcta la información que incluyo en las e
 
 ### Implementa mecanismos de lectura de archivos para cargar datos a las estructuras de manera correcta.
 
-Considero que si implemento mecanismos para leer los archivos, ya que creé otra clase, llamada "Carga" donde tengo un método que me permite leer los datos de distintos archivos de texto siempre y cuando estos sigan el formato antes especificado.
+Implementé un mecanismo de lectura de archivos, mediante la creación de una clase llamada "Carga", ya que ahí cree un método llamado "cargar()", el cuál permite leer cada uno de los datos incluidos en un archivo de texto, siempre y cuando el archivo de texto siga el formato antes especificado en esta documentación.
 
 ### Implementa mecanismos de escritura de archivos para guardar los datos  de las estructuras de manera correcta
 
-Considero que si implemento mecanismos para leer los archivos, ya que dentro de la clase que se creó en el avance anterior (llamada "Carga") agregué un método que permite guardar los datos obtenidos luego de realizar: un ordenamiento por poder, por costo, por tasa de victoria, y un mazo que se recomienda. Todo esto lo puede hacer siempre y cuando se le haya brindado una colección válida al programa.
+Implementé un mecanismo de escritura de archivos al agregar el método "guardar()" a la antes mencionada clase "Carga", este método permite almacenar los resultados obtenidos durante el análisis de una colección de cartas, al generar un archivo de texto llamado "resultados.txt", en el cuál se guardan los datos de la colección de cartas, luego de ordenarlas: por poder, por costo y por tasa de victoria, así como el mazo recomendado por el programa. Este método podrá realizarse siempre que se haya cargado una colección válida.
+
+De esta manera, los resultados pueden consultarse posteriormente sin necesidad de ejecutar nuevamente todos los análisis o de ir ejecutando una por una cada opción del programa. 
