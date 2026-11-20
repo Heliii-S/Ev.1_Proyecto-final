@@ -35,12 +35,20 @@ En este segundo avance se corrigieron las observaciones del avance 1, también s
 4. Opción de crear un mazo con altas tasas de victoria: para poder cumplir el propósito del programa, y aplicar la competencia de usar otras estructuras de datos.
 
 ## Descripción del avance 3
-Escribe aquí la descripción de lo que contiene este avance. 
+En este tercer avance, se empezó a usar una lista ligada para implementar la queue, agregué una nueva opción en el menú que permite simular la entrega de cartas, y ahora se pueden guardar los resultados obtenidos luego de analizar el mazo en un archivo de texto.
 
 ### Cambios sobre el segundo avance
 1. Se cambió la forma de implementar la queue o fila, ya no se encuentra implementada solamente sobre un vector, sino que al momento de crear una sugerencia de mazo y al hacer una simulación simple de una partida, se usa una lista ligada para guardar ahí las cartas seleccionadas, así se pueden realizar acciones de forma más eficiente sobre todo para la opción de simulación que se añadió en este avance.
 2. Se agregó una nueva opción que es la opción de simular la entrega de cartas (solamente como se van entregando al jugador, no se realiza nada más); como en el juego se te van dando las cartas del mazo de forma aleatoria y tal como en el juego, es posible que algunas cartas no salgan nunca en la partida. Este pequeño simulador empieza mostrando al usuario las cuatro cartas que se le dan al inicio (de forma aleatoria). En cada ronda se le permitirá al usuario usar alguna carta o no, y también se le dará la opción de terminar la simulación. Otro aspecto importante de esta simulación es que deja de dar cartas si la mano del jugador se llena (es decir si ya tiene 7 cartas), además, da una carta nueva de forma aleatoria al inicio de cada turno, tal y como en el juego.
 3. Se agregó una nueva función para guardar el resultado del análisis de cada colección, el reporte incluye los datos que se obtendrían si seleccionaras cada opción del menú (excepto la simulación) y se genera un archivo de texto aparte con el nombre de: "resultados.txt".
+
+## Descripción del avance final
+En este avance se realizaron las correcciones finales al README, se cambió la forma en la que funcionan el menú general, ya no pregunta si quieres continuar luego de realizar cada acción sino que asume que quieres seguir usando el programa, hasta que selecciones la opción de salir. 
+
+### Cambios sobre el tercer avance
+1. Cambiar la argumentación sobre el análisis de complejidad espacial y temporal de las listas en el README
+2. Corregir la argumentación sobre la implementación de mecanismos de escritura en el README
+3. Cambiar la condición que usa el while del menú, para que siga mostrando las opciones del menú infinitamente, ya que se agregó una nueva opción llamada: "0 Salir del programa" y como ya no existe la opción anterior de preguntar si quieres realizar otra acción, las opciones del menú se enumeraron de una manera más natural (0 al 8)
 
 ## Instrucciones para compilar el avance de proyecto
 Ejecuta el siguiente comando en la terminal:
@@ -84,23 +92,25 @@ Datos importantes a considerar:
 3. Las cartas deben ser diferentes, no pueden repetirse.
 
 ## Descripción de las salidas del avance de proyecto
-El programa muestra en la terminal lo que el usuario haya decidido que muestre.
+El programa muestra en la terminal lo que el usuario haya decidido que muestre y luego de ese resultado pedido vuelve a mostrar el menú de opciones del programa.
 
-3. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
+0. Si se elige la opción de salir del programa, se mostrará un mensaje de despedida en la terminal y el programa terminará.
    
-4. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
+1. Si se elige la opción de cargar una colección, luego de cargar el archivo, el programa le dirá al usuario si la carga fue exitosa o no.
    
-5. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
+2. Si se elige la opción de mostrar colección actual, se mostrarán los nombres de las cartas de la colección actual.
    
-6. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
+3. Si se elige la opción de ordenar por poder, se mostrará el nombre de las cartas y el valor de su poder, de mayor a menor.
    
-7. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
+4. Si se elige la opción de ordenar por costo, se mostrará el nombre de las cartas y el costo que tienen, de menor a mayor.
    
-8. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
+5. Si se elige la opción de ordenar por tasa de victoria, se mostrará el nombre de las cartas y la tasa de victoria que tienen, de mayor a menor.
    
-9. Si se elige la opción de simular una partida con el mazo recomendado, se empezarán a mostrar las cartas entregadas en cada turno, y al usuario se le permitirá "jugar" alguna de esas cartas, pasar de turno (0) o salir de la simulación (8).
+6. Si se elige la opción de crear un mazo con altas tasas de victorias, se mostrarán las 12 cartas con mayor tasa de victoria de la colección.
+   
+7. Si se elige la opción de simular una partida con el mazo recomendado, se empezarán a mostrar las cartas entregadas en cada turno, y al usuario se le permitirá "jugar" alguna de esas cartas, pasar de turno (0) o salir de la simulación (8).
     
-10. Si se elige la opción de generar un archivo con el análisis realizado, se genera un archivo de texto aparte con el nombre de: "resultados.txt". Este archivo incluye los datos obtenidos luego de realizar: un ordenamiento por poder, por costo, por tasa de victoria, y un mazo que se recomienda. Todo esto lo puede hacer siempre y cuando se le haya brindado una colección válida al programa.
+8. Si se elige la opción de generar un archivo con el análisis realizado, se genera un archivo de texto aparte con el nombre de: "resultados.txt". Este archivo incluye los datos obtenidos luego de realizar: un ordenamiento por poder, por costo, por tasa de victoria, y un mazo que se recomienda. Todo esto lo puede hacer siempre y cuando se le haya brindado una colección válida al programa.
     
 # Desarrollo de competencias
 
@@ -113,11 +123,11 @@ El algoritmo de ordenamiento que se usa es Merge, y en el mejor, peor y caso pro
 
 En este programa uso 3 estructuras de datos: una queue o fila, listas enlazadas y vectores.
 
-Las operaciones que realizo con la fila son: enqueue, dequeue, front, empty, full, con complejidad temporal O(1) en el mejor caso, peor caso y caso promedio). Además uso clear, con complejidad temporal O(1) en el mejor de los casos, y O(n) en el peor de los casos y el caso promedio, tiene este valor en el caso promedio en lugar de un O(1) porque al usar una queue con listas enlazadas, cada vez que se libera la memoria se debe liberar la memoria de cada nodo uno por uno.
+Las operaciones que realizo con la fila son: enqueue, dequeue, front, empty, full, con complejidad temporal O(1) en el mejor caso, peor caso y caso promedio. Además uso clear, con complejidad temporal O(1) en el mejor de los casos, y O(n) en el peor de los casos y el caso promedio, tiene este valor en el caso promedio en lugar de un O(1) porque al usar una queue con listas enlazadas, cada vez que se libera la memoria se debe liberar para cada nodo uno por uno.
 
-En cuanto a la complejidad espacial, la queue tiene una complejidad total de O(n) y de O(1) por operación. 
+En cuanto a la complejidad espacial, la queue tiene una complejidad total de O(n). 
 
-Con respecto a la lista enlazada, su complejidad espacial y temporal es de O(1) por cada nodo en el mejor, peor y caso promedio. 
+Con respecto a la lista enlazada, su complejidad espacial es de O(n) en el peor de los casos y su complejidad temporal es de O(n) en el caso promedio y el peor de los casos para acceder a los datos de las cartas del mazo. Y tiene una complejidad temporal de 0(1) en el caso promedio y el peor de los casos, al agregar y borrar cartas del mazo. 
 
 Por último, con el vector, el acceso a cartas[i] y size() tiene una complejidad temporal de O(1) en el mejor caso, el caso promedio y el peor caso. Pero en general el vector tiene una complejidad temporal de O(n) combinando el mejor caso, promedio y el caso peor de acciones como: insertar en medio, eliminar en medio, recorrer elementos, etc. 
 
